@@ -1,0 +1,77 @@
+.businesses {
+  width: 100%;
+}
+@media screen and (min-width: 290px) {
+  .businesses {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s;
+    margin: 0 auto 50px;
+    height: 100%;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .businesses {
+    margin: 0 auto 100px;
+  }
+}
+.businesses h2 {
+  font-weight: 600;
+  line-height: 100%;
+}
+@media screen and (min-width: 290px) {
+  .businesses h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .businesses h2 {
+    font-size: 56px;
+    text-align: center;
+    margin-bottom: 55px;
+  }
+}
+.businesses__cards-grid {
+  margin: 0 auto;
+}
+@media screen and (min-width: 290px) {
+  .businesses__cards-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+    width: 280px;
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 420px) {
+  .businesses__cards-grid {
+    width: 85%;
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .businesses__cards-grid {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .businesses__cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .businesses__cards-grid {
+    gap: 20px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,605 @@
+.map {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto 100px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+@media screen and (min-width: 290px) {
+  .map {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .map {
+    margin: 0 auto 100px;
+  }
+}
+.map .blurred {
+  width: 100%;
+  max-width: 1250px;
+  max-height: 980px;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.7s ease-in-out;
+}
+.map .blurred.fade-in {
+  opacity: 1;
+  z-index: 80;
+  height: 100%;
+}
+.map .blurred.fade-out {
+  opacity: 0;
+  z-index: 0;
+  height: 100%;
+}
+.map .dropdown {
+  position: absolute;
+  left: 70px;
+  top: 5px;
+  width: 183px;
+  margin: 0;
+  padding: 20px 0 0;
+  cursor: pointer;
+  user-select: none;
+  z-index: 80;
+}
+@media screen and (min-width: 290px) {
+  .map .dropdown {
+    padding: 10px 5px 0;
+    left: 5px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .map .dropdown {
+    padding: 20px 70px 0 0;
+    left: 70px;
+    width: 250px;
+  }
+}
+.map .dropdown .dropdown__buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+}
+.map .dropdown .dropdown__buttons .dropdown__button {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  z-index: 10;
+}
+.map .dropdown .dropdown__buttons .dropdown__arrow_reversed {
+  transform: rotate(180deg);
+  z-index: 10;
+}
+.map .dropdown .drop-menu {
+  position: absolute;
+  width: 100vw;
+  background: white;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.06);
+  z-index: -1;
+  transform: translateY(-10px);
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+}
+@media screen and (min-width: 290px) {
+  .map .dropdown .drop-menu {
+    position: relative;
+    left: -5px;
+    margin: 5px 0 0 -5px;
+    justify-content: flex-start;
+    box-shadow: 0 16px 16px rgba(0, 0, 0, 0.06);
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 30% 30% 40%;
+    grid-template-rows: repeat(3, minmax(5px, max-content));
+    row-gap: 10px;
+    min-height: 100%;
+    top: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  .map .dropdown .drop-menu {
+    top: 0;
+    width: 100vw;
+    margin: 5px 24px 0 -5px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 32px 32px rgba(0, 0, 0, 0.06);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .map .dropdown .drop-menu {
+    top: -20px;
+    left: -65px;
+    width: 100vw;
+    max-width: 1250px;
+    margin: 5px 24px 0 -5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 58px;
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.06);
+  }
+}
+.map .dropdown .drop-menu.active {
+  visibility: visible;
+  opacity: 1;
+  height: 100%;
+  z-index: 99;
+  transform: translateY(0);
+}
+@media screen and (min-width: 290px) {
+  .map .dropdown .drop-menu.active {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 30% 30% 40%;
+    grid-template-rows: repeat(3, minmax(5px, max-content));
+    row-gap: 10px;
+    padding: 5px 0 20px 5px;
+    min-height: 100%;
+    top: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  .map .dropdown .drop-menu.active {
+    width: 100vw;
+    max-width: 1250px;
+    margin: 5px 24px 0 -5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+    box-shadow: 0 32px 32px rgba(0, 0, 0, 0.06);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .map .dropdown .drop-menu.active {
+    top: 40px;
+    padding: 30px 30px 30px 70px;
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.06);
+  }
+}
+.map__nav {
+  width: 100%;
+  height: 80px;
+  margin: 0 auto 90px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
+  z-index: 50;
+}
+@media screen and (min-width: 290px) {
+  .map__nav {
+    flex-direction: column;
+    padding: 12px 0 0;
+    align-items: flex-start;
+    margin: 0 0 8px;
+    height: 95px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .map__nav {
+    flex-direction: row;
+    height: 59px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .map__nav {
+    height: 80px;
+    padding: 0 70px;
+  }
+}
+.map__nav .map__areas-outer {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width: 290px) {
+  .map__nav .map__areas-outer {
+    padding: 47px 0 0 5px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .map__nav .map__areas-outer::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  .map__nav .map__areas-outer {
+    max-width: 899px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .map__nav .map__areas-outer {
+    max-width: 736px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .map__nav .map__areas-outer {
+    padding-top: 12px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .map__nav .map__areas-outer {
+    padding: 0;
+  }
+}
+.map__nav .map__areas-outer .map__areas {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media screen and (min-width: 290px) {
+  .map__nav .map__areas-outer .map__areas {
+    width: 100%;
+    min-width: 520px;
+    margin: 0;
+    padding: 0 5px;
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 600px) {
+  .map__nav .map__areas-outer .map__areas {
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 900px) {
+  .map__nav .map__areas-outer .map__areas {
+    justify-content: flex-end;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .map__nav .map__areas-outer .map__areas {
+    padding: 30px 0;
+  }
+}
+.map__nav .map__areas-outer .map__areas .map__area {
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 30px;
+  background: none;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  color: inherit;
+  position: relative;
+}
+@media screen and (min-width: 290px) {
+  .map__nav .map__areas-outer .map__areas .map__area {
+    font-size: 14px;
+    line-height: 16px;
+    margin-right: 16px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .map__nav .map__areas-outer .map__areas .map__area {
+    font-size: 18px;
+    margin-right: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .map__nav .map__areas-outer .map__areas .map__area {
+    margin-right: 30px;
+    line-height: 20px;
+  }
+}
+.map__nav .map__areas-outer .map__areas .map__area:last-child {
+  margin-right: 0;
+}
+.map__nav .map__areas-outer .map__areas .map__area:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  bottom: -30px;
+  left: 0;
+  border-bottom: 2px solid #A30C33;
+  width: 100%;
+  opacity: 0;
+}
+@media screen and (min-width: 290px) {
+  .map__nav .map__areas-outer .map__areas .map__area:after {
+    bottom: -19px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .map__nav .map__areas-outer .map__areas .map__area:after {
+    bottom: -30px;
+  }
+}
+.map__nav .map__areas-outer .map__areas .map__area:hover:after {
+  opacity: 1;
+}
+.map__nav .map__areas-outer .map__areas .map__area:focus {
+  color: #A30C33;
+}
+.map__nav .map__areas-outer .map__areas .map__area:focus:after {
+  opacity: 1;
+}
+.map__nav .map__areas-outer .map__areas .map__area_active {
+  color: #A30C33;
+}
+.map__nav .map__areas-outer .map__areas .map__area_active:after {
+  opacity: 1;
+}
+.map .map-card {
+  width: 100%;
+  max-width: 1190px;
+  margin: 0 auto;
+  padding: 5px;
+  position: relative;
+}
+@media screen and (min-width: 290px) {
+  .map .map-card {
+    overflow-x: scroll;
+  }
+  .map .map-card::-webkit-scrollbar {
+    width: 0 !important;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+  }
+}
+.map .map-card .region__container {
+  position: absolute;
+  top: 5.5px;
+  left: 6px;
+}
+.map .map-card .region__container .region {
+  opacity: 0;
+  transition: opacity 0.6s;
+  display: block;
+  background: white;
+  position: relative;
+}
+.map .map-card .region__container .region.active {
+  opacity: 1;
+}
+.map .map-card .region__container .region .region__point {
+  width: 8px;
+  height: 8px;
+  background: #444444;
+  border-radius: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: calc(100% - 2px);
+}
+.map .map-card .region__container .region .region__city {
+  color: #444444;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  text-align: right;
+  position: absolute;
+}
+.map .map-card .region__container .region #moscow-point {
+  left: 141px;
+  top: 224.5px;
+}
+.map .map-card .region__container .region #moscow-city {
+  left: 125px;
+  top: 234px;
+}
+.map .map-card .region__container .region #yaroslavl-point {
+  left: 178.5px;
+  top: 198px;
+}
+.map .map-card .region__container .region #yaroslavl-city {
+  left: 152px;
+  top: 206px;
+}
+.map .map-card .region__container .region #voronezh-point {
+  left: 93.5px;
+  top: 246.5px;
+}
+.map .map-card .region__container .region #voronezh-city {
+  left: 75px;
+  top: 255px;
+}
+.map .map-card .region__container .region #belgorod-point {
+  left: 90px;
+  top: 276.5px;
+}
+.map .map-card .region__container .region #belgorod-city {
+  left: 71px;
+  top: 286px;
+}
+.map .map-card .region__container .region #petersbug-point {
+  left: 149px;
+  top: 131px;
+}
+.map .map-card .region__container .region #petersbug-city {
+  left: 95px;
+  top: 144px;
+  min-width: 100px;
+}
+.map .map-card .region__container .region #kaliningrad-point {
+  left: 38.5px;
+  top: 124.5px;
+}
+.map .map-card .region__container .region #kaliningrad-city {
+  left: 11px;
+  top: 135px;
+}
+.map .map-card .region__container .region #rostov-na-donu-point {
+  left: 81px;
+  top: 320px;
+}
+.map .map-card .region__container .region #rostov-na-donu-city {
+  left: 30px;
+  top: 330px;
+  min-width: 100px;
+}
+.map .map-card .region__container .region #volgograd-point {
+  left: 108px;
+  top: 361px;
+}
+.map .map-card .region__container .region #volgograd-city {
+  left: 80px;
+  top: 370px;
+}
+.map .map-card .region__container .region #krasnodar-point {
+  left: 50px;
+  top: 380px;
+}
+.map .map-card .region__container .region #krasnodar-city {
+  left: 24px;
+  top: 390px;
+}
+.map .map-card .region__container .region #n-novgorod-point {
+  left: 192px;
+  top: 261px;
+}
+.map .map-card .region__container .region #n-novgorod-city {
+  left: 132px;
+  top: 270px;
+  min-width: 100px;
+}
+.map .map-card .region__container .region #kazan-point {
+  left: 250px;
+  top: 299px;
+}
+.map .map-card .region__container .region #kazan-city {
+  left: 235px;
+  top: 307px;
+}
+.map .map-card .region__container .region #samara-point {
+  left: 187px;
+  top: 307px;
+}
+.map .map-card .region__container .region #samara-city {
+  left: 170px;
+  top: 315px;
+}
+.map .map-card .region__container .region #ufa-point {
+  left: 254px;
+  top: 337px;
+}
+.map .map-card .region__container .region #ufa-city {
+  left: 247px;
+  top: 345px;
+}
+.map .map-card .region__container .region #orenburg-point {
+  left: 220px;
+  top: 366px;
+}
+.map .map-card .region__container .region #orenburg-city {
+  left: 200px;
+  top: 375px;
+}
+.map .map-card .region__container .region #izhevsk-point {
+  left: 326px;
+  top: 290px;
+}
+.map .map-card .region__container .region #izhevsk-city {
+  left: 310px;
+  top: 300px;
+}
+.map .map-card .region__container .region #perm-point {
+  left: 379px;
+  top: 300px;
+}
+.map .map-card .region__container .region #perm-city {
+  left: 365px;
+  top: 310px;
+}
+.map .map-card .region__container .region #surgut-point {
+  left: 433px;
+  top: 312px;
+}
+.map .map-card .region__container .region #surgut-city {
+  left: 420px;
+  top: 320px;
+}
+.map .map-card .region__container .region #tyumen-point {
+  left: 411.5px;
+  top: 363px;
+}
+.map .map-card .region__container .region #tyumen-city {
+  left: 395px;
+  top: 374px;
+}
+.map .map-card .region__container .region #ekaterinburg-point {
+  left: 320.5px;
+  top: 329px;
+}
+.map .map-card .region__container .region #ekaterinburg-city {
+  left: 291px;
+  top: 338px;
+}
+.map .map-card .region__container .region #chelyabinsk-point {
+  left: 318px;
+  top: 364px;
+}
+.map .map-card .region__container .region #chelyabinsk-city {
+  left: 293px;
+  top: 373px;
+}
+.map .map-card .region__container .region #omsk-point {
+  left: 458px;
+  top: 475px;
+}
+.map .map-card .region__container .region #omsk-city {
+  left: 449px;
+  top: 485px;
+}
+.map .map-card .region__container .region #novosibirsk-point {
+  left: 511px;
+  top: 455px;
+}
+.map .map-card .region__container .region #novosibirsk-city {
+  left: 483px;
+  top: 463px;
+}
+.map .map-card .region__container .region #tomsk-point {
+  left: 577px;
+  top: 459px;
+}
+.map .map-card .region__container .region #tomsk-city {
+  left: 565px;
+  top: 443px;
+}
+.map .map-card .region__container .region #krasnoyarsk-point {
+  left: 634.5px;
+  top: 457px;
+}
+.map .map-card .region__container .region #krasnoyarsk-city {
+  left: 608px;
+  top: 465px;
+}
+.map .map-card .region__container .region #irkutsk-point {
+  left: 690.5px;
+  top: 490px;
+}
+.map .map-card .region__container .region #irkutsk-city {
+  left: 673px;
+  top: 500px;
+}
+.map .map-card .region__container .region #habarovsk-point {
+  left: 983.5px;
+  top: 498px;
+}
+.map .map-card .region__container .region #habarovsk-city {
+  left: 959px;
+  top: 480px;
+}
+.map .map-card .region__container .region #vladivistok-point {
+  left: 971px;
+  top: 573.5px;
+}
+.map .map-card .region__container .region #vladivistok-city {
+  left: 940px;
+  top: 585px;
+}
+
+/*# sourceMappingURL=style.css.map */

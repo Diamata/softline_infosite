@@ -1,0 +1,77 @@
+.businesses-card {
+  width: 100%;
+  height: 260px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+@media screen and (min-width: 900px) {
+  .businesses-card {
+    width: 100%;
+  }
+}
+.businesses-card__img-wrapper, .businesses-card__description {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  top: 0;
+}
+@media screen and (min-width: 600px) {
+  .businesses-card__img-wrapper, .businesses-card__description {
+    margin-top: 5px;
+    left: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  .businesses-card__img-wrapper .businesses-card__img {
+    width: 100vw;
+    max-width: 899px;
+  }
+}
+.businesses-card__description {
+  background: rgba(45, 54, 83, 0.6);
+  padding: 28px 115px 28px 20px;
+  left: 0;
+  top: 180px;
+}
+@media screen and (min-width: 600px) {
+  .businesses-card__description {
+    padding-right: 28px;
+  }
+}
+.businesses-card__description .businesses-card__title {
+  width: 100%;
+  max-width: 356px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: white;
+  margin-bottom: 28px;
+  white-space: pre-wrap;
+}
+@media screen and (min-width: 600px) {
+  .businesses-card__description .businesses-card__title {
+    max-width: 500px;
+    white-space: normal;
+  }
+}
+@media screen and (min-width: 900px) {
+  .businesses-card__description .businesses-card__title {
+    font-size: 20px;
+  }
+}
+.businesses-card__description .businesses-card__desc {
+  width: 100%;
+  max-width: 480px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 140%;
+  color: white;
+}
+.businesses-card:hover .businesses-card__description {
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

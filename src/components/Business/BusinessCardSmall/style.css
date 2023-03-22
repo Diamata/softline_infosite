@@ -1,0 +1,76 @@
+.business-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 280px;
+  height: 60px;
+  position: relative;
+  transition: all 0.55s ease-in-out;
+  overflow: hidden;
+}
+@media screen and (min-width: 420px) {
+  .business-card {
+    min-width: 100%;
+  }
+}
+.business-card.active {
+  height: 240px;
+}
+.business-card__img-wrapper, .business-card__description {
+  margin: 0;
+  padding: 0;
+}
+.business-card__img-wrapper {
+  position: absolute;
+  top: 0;
+  left: -150px;
+}
+@media screen and (min-width: 420px) {
+  .business-card__img-wrapper {
+    left: -50px;
+  }
+}
+.business-card__img-wrapper img {
+  background-size: cover;
+  height: 240px;
+}
+.business-card__description {
+  background: rgba(45, 54, 83, 0.6);
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+.business-card__description .business-card__title-full {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 10px;
+  color: white;
+  height: 60px;
+  align-items: center;
+}
+.business-card__description .business-card__title-full .business-card__title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 110%;
+  margin: 0;
+}
+.business-card__description .business-card__title-full .dropdown__arrow_reversed {
+  transform: rotate(180deg);
+  z-index: 10;
+}
+.business-card__description .business-card__desc {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  margin: 0;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

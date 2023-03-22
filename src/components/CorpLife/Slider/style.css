@@ -1,0 +1,138 @@
+.slider__container {
+  position: relative;
+}
+.slider__container .slick-slider, .slider__container .slider {
+  margin: 0;
+}
+.slider__container .slider {
+  width: 100%;
+  max-width: 1110px;
+}
+.slider__container .slider .slick-slide {
+  padding: 5px;
+}
+@media screen and (min-width: 900px) {
+  .slider__container .slider .slick-slide {
+    margin: 0;
+  }
+}
+.slider__container .slider .slider__image {
+  width: 100%;
+}
+.slider__container .slider .slick-dots {
+  bottom: -10px;
+  width: 100%;
+  max-width: 1110px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.slider__container .slider .slick-dots li {
+  width: 180px;
+  height: 6px;
+  margin: 0 10px 0 0;
+}
+@media screen and (min-width: 600px) {
+  .slider__container .slider .slick-dots li {
+    width: 90px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .slider__container .slider .slick-dots li {
+    width: 160px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .slider__container .slider .slick-dots li {
+    width: 200px;
+  }
+}
+.slider__container .slider .slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  content: "";
+  opacity: 0.1;
+  background: #000;
+}
+.slider__container .slider .slick-dots li:last-child {
+  margin-right: 0;
+}
+.slider__container .slider .slick-dots .slick-active {
+  background: #A30C33;
+  width: 180px;
+}
+@media screen and (min-width: 600px) {
+  .slider__container .slider .slick-dots .slick-active {
+    width: 90px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .slider__container .slider .slick-dots .slick-active {
+    width: 160px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .slider__container .slider .slick-dots .slick-active {
+    width: 200px;
+  }
+}
+@media screen and (min-width: 290px) {
+  .slider__container .slider .slick-dots {
+    height: 0;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 600px) {
+  .slider__container .slider .slick-dots {
+    overflow: visible;
+    height: 6px;
+  }
+}
+.slider__container .slider__buttons {
+  width: 100%;
+  max-width: 132px;
+  display: flex;
+  justify-content: space-between;
+}
+.slider__container .slider__buttons .slider__button {
+  width: 56px;
+  height: 56px;
+  outline: none;
+  border: none;
+  border-radius: 100%;
+  background: #F0F0F0;
+  padding: 18px;
+  font-size: 20px;
+  color: #A30C33;
+  position: absolute;
+  top: -5em;
+  right: 0;
+  z-index: 4;
+  cursor: pointer;
+}
+.slider__container .slider__buttons .slider__button_back {
+  right: 3.8em;
+}
+@media screen and (min-width: 290px) {
+  .slider__container .slider__buttons {
+    display: none;
+  }
+}
+@media screen and (min-width: 900px) {
+  .slider__container .slider__buttons {
+    display: block;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .slider__container .slider__buttons {
+    top: -5em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,77 @@
+@import "../../../scss/variables";
+
+.corp-life {
+  width: 100vw;
+
+  @media screen and (min-width: 290px) {
+    max-width: 290px;
+    padding: 0 10px 29px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 420px) {
+    max-width: 430px;
+  }
+
+  @media screen and (min-width: 600px) {
+    max-width: 850px;
+  }
+
+  @media screen and (min-width: 600px) {
+    max-width: 1110px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1250px;
+    padding: 0 70px 56px;
+  }
+
+  &__top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 50px 0;
+
+    h2 {
+      font-weight: 600;
+      line-height: 100%;
+      text-align: left;
+
+      @media screen and (min-width: 290px) {
+        font-size: 28px;
+      }
+
+      @media screen and (min-width: 1200px) {
+        font-size: 56px;
+      }
+    }
+
+    @media screen and (min-width: 290px) {
+      margin-bottom: 15px;
+    }
+
+    @media screen and (min-width: 900px) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+
+    @media screen and (min-width: 290px) {
+      max-width: 290px;
+    }
+
+    @media screen and (min-width: 420px) {
+      max-width: 420px;
+    }
+
+    @media screen and (min-width: 600px) {
+      max-width: 850px;
+    }
+
+    @media screen and (min-width: 600px) {
+      max-width: 1110px;
+    }
+  }
+}

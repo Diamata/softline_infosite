@@ -1,0 +1,141 @@
+@import "../../../scss/variables";
+
+
+.slider__container {
+  position: relative;
+
+  .slick-slider, .slider {
+    margin: 0;
+  }
+
+  .slider {
+    width: 100%;
+    max-width: 1110px;
+
+    .slick-slide {
+      padding: 5px;
+
+      @media screen and (min-width: 900px) {
+        margin: 0;
+      }
+    }
+
+    .slider__image {
+      width: 100%;
+    }
+
+    .slick-dots {
+      bottom: -10px;
+      width: 100%;
+      max-width: 1110px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+
+      li {
+        width: 180px;
+        height: 6px;
+        margin: 0 10px 0 0;
+
+        @media screen and (min-width: 600px) {
+          width: 90px;
+        }
+
+        @media screen and (min-width: 900px) {
+          width: 160px;
+        }
+
+        @media screen and (min-width: 1200px) {
+          width: 200px;
+        }
+
+        button {
+          &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 6px;
+            width: 100%;
+            content: '';
+            opacity: .1;
+            background: #000;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .slick-active {
+        background: $main;
+        width: 180px;
+
+        @media screen and (min-width: 600px) {
+          width: 90px;
+        }
+
+        @media screen and (min-width: 900px) {
+          width: 160px;
+        }
+
+        @media screen and (min-width: 1200px) {
+          width: 200px;
+        }
+      }
+
+      @media screen and (min-width: 290px) {
+        height: 0;
+        overflow: hidden;
+      }
+
+      @media screen and (min-width: 600px) {
+        overflow: visible;
+        height: 6px;
+      }
+    }
+  }
+
+  .slider__buttons {
+    width: 100%;
+    max-width: 132px;
+    display: flex;
+    justify-content: space-between;
+
+    .slider__button {
+      width: 56px;
+      height: 56px;
+      outline: none;
+      border: none;
+      border-radius: 100%;
+      background: #F0F0F0;
+      padding: 18px;
+      font-size: 20px;
+      color: $main;
+      position: absolute;
+      top: -5em;
+      right: 0;
+      z-index: 4;
+      cursor: pointer;
+
+      &_back {
+        right: 3.8em;
+      }
+    }
+
+    @media screen and (min-width: 290px) {
+      display: none;
+    }
+
+    @media screen and (min-width: 900px) {
+      display: block;
+    }
+
+    @media screen and (min-width: 1200px) {
+      top: -5em;
+    }
+  }
+}
